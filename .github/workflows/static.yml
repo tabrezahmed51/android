@@ -38,10 +38,6 @@ jobs:
     steps:
       - name: Show Job Results
         run: echo "Auto-format and language detection jobs were successful!"
-
-# Add other jobs as needed
-
-
 Fix Errors
 Options: Auto-format=true, Language Detection=true, Advanced Output=true
 CODE:
