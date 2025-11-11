@@ -12,15 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Format code (Prettier)
+      - name: Format code
         run: npx prettier --write .
-      - name: Commit changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Auto-format code on push"
-          git push
 
   detect-language:
     runs-on: ubuntu-latest
@@ -29,8 +22,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Detect languages
         uses: github/linguist@v7
-      - name: Show detected languages
-        run: cat languages.json
 
   advanced-output:
     runs-on: ubuntu-latest
